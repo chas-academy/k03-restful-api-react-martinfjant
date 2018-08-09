@@ -3,10 +3,11 @@ const mongoose = require('mongoose')
 // Item schema
 const ItemSchema = new mongoose.Schema(
 {
-    "item": {type: String},
+    "name": {type: String},
+    "description": {type: String},
     "cost": {type: Number},
     "image": {type: String},
-    "url": {type: String}
+    "categories": [{type: String}]
 }
 )
 

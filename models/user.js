@@ -6,23 +6,8 @@ const UserSchema = new mongoose.Schema(
     "name": {type: String},
     "email": {type: String},
     "password": {type: String},
-    "purchases": [
-      {
-          "time": {type: Date},
-          "paid": {type: Boolean},
-          "delivered": {type: Boolean},
-          "items": [
-            {
-                "item": {type: String},
-                "cost": {type: Number},
-                "image": {type: String},
-                "url": {type: String}
-            }
-          ]
-      }
-    ]
-},
-{ timestamps: true }
+    "adress": {type: String}
+    }
 )
 
 

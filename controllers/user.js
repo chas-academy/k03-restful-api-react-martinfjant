@@ -30,6 +30,7 @@ async function updateUser (ctx) {
    ctx.body = User.findOneAndUpdate({"_id": ctx.params.id}, {"purchases": {$push: {items: ctx.request.body}}})
 } 
 
+
  module.exports = {
      findAll,
      findUser,

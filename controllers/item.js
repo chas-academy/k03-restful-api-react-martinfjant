@@ -11,6 +11,14 @@ const Item = require("../models/Item")
     ctx.body = await Item.findById(ctx.params.id)
  }
 
+ //Fetch all by tag
+
+ async function findByTag (ctx) {
+    console.log(ctx.params.tag)
+     ctx.body = await Item.find({categories: ctx.params.tag})
+ }
+
+
 // Create a new Item from the payload body and save it into mongo
  async function createItem (ctx) {
      const newItem      = new Item(ctx.request.body)
@@ -29,11 +37,19 @@ const Item = require("../models/Item")
 async function updateItem (ctx) {
     console.log('Not supported yet')
 }
+
+//Show only names
+async function testController (ctx) {
+    let foo = await Item.find({})
+    ctx.body = foo.map(bar => bar.name + " " + bar.cost)
+}
  
  module.exports = {
      findAll,
      findItem,
+     findByTag,
      createItem,
      deleteItem,
-     updateItem
+     updateItem,
+     testController
  }
