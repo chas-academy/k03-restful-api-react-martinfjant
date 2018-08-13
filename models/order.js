@@ -7,14 +7,16 @@ const OrderSchema = new mongoose.Schema(
     "name": {type: String},
     "adress": {type: String},
     "payment": {type: String},
-    "items": {
+    "paid": {type: Boolean},
+    "shipped": {type: Boolean},
+    "items": [
         {"qty": {type: Number},
          "id": {type: String},
          "name": {type: String},
          "price": {type: Number}    
         }
-    },
-    { timestamps: true }
+    ],
+
     }
 )
 
