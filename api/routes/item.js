@@ -1,11 +1,13 @@
 const Router = require('koa-router')
 const router = new Router()
 const Controller = require("../controllers/item")
+const jwt = require("../jwt")
+
 
 
 // /ITEM
 router.get("/", Controller.findAll)
-router.post("/", Controller.createItem)
+router.post("/", jwt.jwt, Controller.createItem)
 // /ITEM/:ID
 //router.get("/:id", Controller.findItem)
 router.put("/:id", Controller.updateItem)

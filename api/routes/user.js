@@ -1,6 +1,8 @@
 const Router = require('koa-router')
 const router = new Router()
 const Controller = require("../controllers/user")
+const jwt = require("../jwt")
+
 
 
 // /USER

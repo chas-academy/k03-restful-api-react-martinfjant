@@ -1,13 +1,16 @@
 const Router = require('koa-router')
 const router = new Router()
 const Controller = require("../controllers/order")
+const jwt = require("../jwt")
 
 
-// /ITEM
-router.get("/", Controller.findAll)
+
+// /ORDER
+router.get("/",  Controller.findAll)
 router.post("/", Controller.newOrder)
-// /ITEM/:ID
+// /ORDER/:USER
 router.get("/:user", Controller.findByUser)
+// /ORDER/SHIP+PAY/:ID
 router.put("/ship/:id", Controller.deliverOrder)
 router.put("/pay/:id", Controller.payOrder)
 
