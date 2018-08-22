@@ -8,6 +8,7 @@ const logger = require("koa-logger");
 const mongoose = require("mongoose");
 const cors = require("@koa/cors");
 const helmet = require("koa-helmet");
+const passport = require("koa-passport");
 
 //Instanciate Koa and Router
 const app = new Koa();
