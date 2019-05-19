@@ -1,0 +1,11 @@
+{
+  "name": "webshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:chas-academy/k03-restful-api-react-martinfjant.git",
+  "author": "martinfjant <martin@falkjohansson.se>",
+  "license": "MIT",
+	"scripts": {
+		"api": "node api/index.js"
+	}
+}
